@@ -1,0 +1,14 @@
+{%extends 'base.html' %}
+{% load crispy_forms_tags%}
+{%block content%}
+
+<h1 class="display-1 text-center">MODIFICA IL TUO ORDINE  !!!</h1>
+<div class='container'>
+    <form action="" method="">
+        {%csrf_token %}
+        {{form|crispy}}
+    <input type='submit' value="submit">SUBMIT</input>
+    </form>
+</div>
+
+{%endblock%}

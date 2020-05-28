@@ -1,0 +1,16 @@
+{%extends 'base.html' %}
+{%block content%}
+{%load crispy_forms_tags%}
+
+<h1 class="display-1 text-center">Place a New order</h1>
+<div class='row d-flex justify-content-center'>
+
+<form class='col-md-5' action='' method="post">
+    {%csrf_token%}
+    {{form|crispy}}
+    <div class="text-center">
+        <button class="btn-lg btn-success center" type="submit">Ordina Ora!</button>
+    </div>
+</form>
+</div>
+{%endblock%}

@@ -1,0 +1,38 @@
+{%extends 'base.html'%}
+{%block title%}Pyzza Website | {{recipe.name}} {%endblock%}
+{% load crispy_forms_tags %}
+{%block content%}
+<div class="row d-flex justify-content-center">
+  <div class="col-8">
+    <div class="content-text">
+      <h1 class="display-3" id='recipe-title'>{{recipe.name}}</h1>
+      <div class="row">
+        <div class="col-6">
+          <span >Rating:</span>
+          <span class="badge badge-warning"> {{rating}}</span>
+        </div>
+        <div class="col-6 text-right">
+          <span >Total votes number:</span>
+          <span class="badge badge-warning"> {{recipe.votes}}</span>
+        </div>
+      </div>
+      <span >Calorie per 100g:</span>
+      <span class="badge badge-danger"> {{calories}}</span>
+      <p>{{recipe.description}}</p>
+      {%for ing in recipe.ingredients.all %}
+        <span class="badge badge-success">{{ing.name}}</span>
+      {%endfor%}
+    </div>  
+  </div>
+  <div id="vote-section">
+    <h2 class="display-1 text-center">Vote this recipe!!!</h2>
+    <form id="form-1" class="form-group" action='/recipe/{{recipe.id}}' method ="post">
+      {%csrf_token %}
+      {{form|crispy}}
+    <input type="submit" name="" value="Submit">
+
+    </form>
+  </div>
+
+</div>
+{%endblock%}

@@ -1,0 +1,20 @@
+{%extends 'base.html' %}
+
+{%block content%}
+    <div class="container">
+        <h1 class="display-1 text-center">Order List</h1>
+        {%for order in object_list%}
+        <div class="my-3 row d-flex ">
+            <div class="col-1">{{order.id}}</div>
+            <div class="col-3">{{order.name|capfirst}} {{order.surname|capfirst}}</div>
+            <div  class="col-2">{{order.email}}</div>
+            <div class="col-3">
+                <a href="{%url 'edit_order' order.id  %}" class="btn btn-success">UPDATE</a>
+            </div>
+            <div class="col-3">
+                <a href="{%url 'remove_order' order.id  %}" class="btn btn-danger">DELETE</a>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+{%endblock%}

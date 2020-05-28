@@ -1,0 +1,48 @@
+{%load static%}
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>{%block title %}{%endblock%}</title>
+        <link rel="stylesheet" href="{% static 'pyzza/css/bootstrap.min.css' %}">    
+        <link rel="stylesheet" href="{%static 'pyzza/css/main.css'%}" >
+    </head>
+    <body class="wide">
+        <div id="page" class="hfeed site">
+            <header>
+                <div class="header">
+                    <div class="row header-image">
+                        <a href="{%url 'home'%}">
+                            <img id="header-logo-image" src="{%static 'pyzza/img/pizza_logo.png''%}" align='left' alt="Pyzza logo image">
+                            <div >
+                                <h1> Pyzza</h1>
+                                <p> Funny and fresh pizza's recipes </p>
+                          </div>
+                        </a>
+                    </div>
+            </header>
+            <div class="main-wrapper " >
+            {%block content%}
+            {%endblock%}
+            </div>
+            <footer id="colophon">
+                <h3 class="display-3">About us</h3>
+                <div >
+                Aenean lacus ante, varius a vulputate hendrerit, elementum vel mauris. Quisque laoreet id mi in
+                 fringilla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                  egestas. Vestibulum gravida orci ex, eget semper neque malesuada et. Praesent non mi a risus
+                   gravida pellentesque at vel felis. Vestibulum venenatis accumsan vestibulum. Donec at risus
+                    sit amet ante dictum posuere. Suspendisse potenti. Quisque faucibus augue in libero commodo,
+                    euismod faucibus sapien rhoncus. Donec sed vulputate risus, id interdum dui. Integer aliquam
+                     metus massa, id varius ex iaculis vel. Donec metus erat, faucibus eget purus a, ullamcorper
+                      pretium leo. Donec ipsum nisl, volutpat eget elit ut, facilisis ultrices lacus. Class aptent
+                      taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut a venenatis diam.
+                </div>
+            </footer>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="{% static 'pyzza/js/bootstrap.min.js' %}"></script>    
+
+    </body>
+</html>
